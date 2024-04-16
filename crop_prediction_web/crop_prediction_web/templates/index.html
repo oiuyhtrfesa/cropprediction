@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Home page</title>
+
+    <style>
+      html,body{
+        height: 100%;
+        margin: 0;
+        padding: 0%;
+      }
+      .f{
+        top:50%;
+  left:0%;
+  position: fixed;
+      }
+      .f1{
+        top:50%;
+  right:0%;
+  position: fixed;
+      }
+      .topnav {
+      background-color:teal;
+  overflow: hidden;
+  top:15%;
+  right:0%;
+  position: fixed;
+  
+    }
+   
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  display: block;
+  text-decoration: none;
+  font-size: 17px;
+}
+p{
+  color:white;
+}
+h3{
+  color:white;
+}
+body{
+  /* background-color:cornflowerblue; */
+  /* background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fpngtree.com%2Ffree-backgrounds-photos%2Fform&psig=AOvVaw2qL9xA5G3htt4rXr-5u8us&ust=1712817584806000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCNic3POEt4UDFQAAAAAdAAAAABAE'); */
+}
+    </style>
+  </head>
+  <body style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkGBOzhz_nNTkipnlId5tXr4woPFQHAMMmgw&usqp=CAU');">
+    <div class="bg">
+    <!-- <img class="bg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkGBOzhz_nNTkipnlId5tXr4woPFQHAMMmgw&usqp=CAU"> -->
+    <div class="topnav">
+      <a href="{% url 'logout' %}">Logout</a>
+      <a href="{% url 'history' %}">History</a>
+      &#127793;
+      </div>
+    <center>
+      <h1>
+        <mark><i>Kindly provide the essential parameters to receive recommendations for crops that offer superior yield potential as output.
+        </i></mark>
+      </h1>
+      <div class="f">
+        <h3>Nitrogen(N) range: 0-140</h3>
+        <h3>Phosporus(P) range:5-145</h3>
+        <h3>Potassium(K) range:5-205</h3>
+        <h3>Temperature range: 8.83-43.7</h3>
+      </div>
+      <div class="f1">
+        <h3>Humidity range:14.3-100</h3>
+        <h3>ph range:3.5-9.94</h3>
+        <h3>Rainfall range:20.2-299</h3>
+      </div>
+      <div class="myDiv">
+        <form action="{% url 'result' %}" >
+          <!-- {% csrf_token %}  -->
+          <p>N</p>
+          <input type="text" name="N" required /><br />
+          <p>P</p>
+          <input type="text" name="P" required /><br />
+          <p>K</p>
+          <input type="text" name="K" required /><br />
+          <p>temperature</p>
+          <input type="text" name="temperature" required /><br />
+          <p>humidity</p>
+          <input type="text" name="humidity" required /><br />
+          <p>pH</p>
+          <input type="text" name="ph" required /><br />
+          <p>rainfall</p>
+          <input type="text" name="rainfall" required /><br /><br />
+
+          <input type="submit" value="GetPredictions" />
+        </form>
+        
+      </div>
+    </center>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!-- display_data.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Parameters</title>
+</head>
+<style>
+    .myD{
+    border: 3px solid black;
+        background-color: pink;
+        text-align: center; 
+        width: 50px;
+}
+</style>
+<body>
+    <center>
+    <h1>Crop Parameters and results of previous searches</h1>
+    <table>
+        <tr>
+            <th>Nitrogen</th>
+            <th>Phosphorus</th>
+            <th>Potassium</th>
+            <th>Temperature</th>
+            <th>Humidity</th>
+            <th>Rainfall</th>
+            <th>pH value</th>
+            <th>Result</th>
+        </tr>
+        {% for crop_parameter in crop_parameters %}
+        <tr>
+            <td>{{ crop_parameter.N }}</td>
+            <td>{{ crop_parameter.P }}</td>
+            <td>{{ crop_parameter.K }}</td>
+            <td>{{ crop_parameter.temperature }}</td>
+            <td>{{ crop_parameter.humidity }}</td>
+            <td>{{ crop_parameter.rainfall }}</td>
+            <td>{{ crop_parameter.ph }}</td>
+            <td>{{crop_parameter.crop_type}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <div class="myD">
+        <a href="{% url 'index' %}">Test</a>
+    </div>
+</center>
+</body>
+</html>
